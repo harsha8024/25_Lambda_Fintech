@@ -2,4 +2,4 @@
 
 
 
-Financial literacy is essential, yet it often lacks engagement, which can hinder knowledge retention and practical application. To address this, an interactive, gamified platform that offers real-time support can make learning both enjoyable and effective. By incorporating game-like elements, users can actively engage with financial concepts, while instant feedback and guidance ensure they can apply what they've learned in real-world scenarios. This approach not only increases motivation but also enhances understanding and long-term retention of financial skills.
+The current expense tracking system lacks predictive capabilities and real-time budget alerts, making it harder to manage finances effectively. Users need a solution that not only tracks expenses but also forecasts future spending and provides timely budget notifications. This project aims to integrate AI-driven predictions and real-time budget monitoring into an intuitive expense management platform.
