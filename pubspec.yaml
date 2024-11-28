@@ -62,6 +62,7 @@ flutter:
     - assets/Book1.xlsx
     - assets/grouped.csv
     - assets/linegraph.json
+    - assets/goal.xlsx
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
