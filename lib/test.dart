@@ -34,63 +34,92 @@ class _DashboardScreenState extends State<DashboardScreen> {
   double monthlyLimit = 50000; // Example monthly expense limit
   double progress1 = 0;
   double progress2 = 0;
+  String username = "John Doe";
+  String points = "1200";
+  String individualRank = "2";
+  String bestMonth = "August 2024";
+  
 
-  // Data for the Pie Chart
+  // Updated categoryData with user-specific information
   List<Map<String, dynamic>> categoryData = [
-    {"title": "Category 1", "spent": 500},
-    {"title": "Category 2", "spent": 9000},
-    {"title": "Category 3", "spent": 12000},
-    {"title": "Category 4", "spent": 8000},
+    {
+      "title": "Category 1", 
+      "spent": 500,
+      "monthlyData": [100.0, 200.0, 300.0, 400.0, 500.0, 600.0],
+      "users": [
+        {
+          "username": "johndoe",
+          "points": 150,
+          "monthlySpending": [120.0, 180.0, 220.0, 300.0, 400.0, 500.0]
+        },
+        {
+          "username": "janedoe",
+          "points": 120,
+          "monthlySpending": [80.0, 150.0, 200.0, 250.0, 350.0, 450.0]
+        }
+      ]
+    },
+    {
+      "title": "Category 2", 
+      "spent": 9000,
+      "monthlyData": [1500.0, 2000.0, 3000.0, 4000.0, 5000.0, 9000.0],
+      "users": [
+        {
+          "username": "alicesmith",
+          "points": 200,
+          "monthlySpending": [1200.0, 1800.0, 2500.0, 3500.0, 4500.0, 9000.0]
+        },
+        {
+          "username": "bobwilson",
+          "points": 180,
+          "monthlySpending": [1000.0, 1500.0, 2000.0, 3000.0, 4000.0, 8000.0]
+        }
+      ]
+    },
+    {
+      "title": "Category 3", 
+      "spent": 12000,
+      "monthlyData": [2000.0, 4000.0, 6000.0, 8000.0, 10000.0, 12000.0],
+      "users": [
+        {
+          "username": "charliebrown",
+          "points": 180,
+          "monthlySpending": [1800.0, 3500.0, 5500.0, 7500.0, 9500.0, 12000.0]
+        },
+        {
+          "username": "davidlee",
+          "points": 160,
+          "monthlySpending": [1500.0, 3000.0, 5000.0, 7000.0, 9000.0, 11000.0]
+        }
+      ]
+    },
   ];
 
-  @override
-  void initState() {
-    super.initState();
-    loadLocalExcelFile();
+  // Leaderboard Data Extraction Method
+  List<Map<String, String>> extractLeaderboardData() {
+  // Collect all users across categories
+  List<Map<String, dynamic>> allUsers = [];
+  for (var category in categoryData) {
+    allUsers.addAll(category['users']);
   }
 
-  // Function to load the local Excel file
-  Future<void> loadLocalExcelFile() async {
-    try {
-      ByteData data = await rootBundle.load('assets/Book1.xlsx');
-      Uint8List bytes = data.buffer.asUint8List();
-      var excel = Excel.decodeBytes(bytes);
+  // Sort users by points in descending order
+  allUsers.sort((a, b) => (b['points'] as int).compareTo(a['points'] as int));
 
-      // Assume the data is in the first sheet
-      var sheet = excel.tables[excel.tables.keys.first]!;
+  // Convert to leaderboard format with ranks
+  return List.generate(allUsers.length, (index) => {
+    'Rank': (index + 1).toString(),
+    'Name': allUsers[index]['username'],
+    'Points': allUsers[index]['points'].toString()
+  });
+}
 
-      // Read column data
-      List<double> column1 = await readColumnData(sheet, 0); // First column
-      List<double> column2 = await readColumnData(sheet, 1); // Second column
-
-      setState(() {
-        totalSpending1 = column1.reduce((a, b) => a + b);
-        totalSpending2 = column2.reduce((a, b) => a + b);
-        progress1 = totalSpending1 / monthlyLimit;
-        progress2 = totalSpending2 / monthlyLimit;
-      });
-    } catch (e) {
-      print("Error loading Excel file: $e");
-    }
-  }
-
-  Future<List<double>> readColumnData(var sheet, int columnIndex) async {
-    List<double> columnData = [];
-
-    for (var row in sheet.rows.skip(1)) {
-      // Skip the header row
-      var cellValue = row[columnIndex]?.value;
-      if (cellValue != null) {
-        columnData.add(double.tryParse(cellValue.toString()) ?? 0.0);
-      }
-    }
-    return columnData;
-  }
+  // ... existing loadLocalExcelFile method remains the same
 
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 2,
+      length: 3, // Updated to 3 tabs
       child: Scaffold(
         appBar: AppBar(
           title: Text('Financial Dashboard'),
@@ -98,6 +127,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
             tabs: [
               Tab(text: 'Dashboard'),
               Tab(text: 'Charts'),
+              Tab(text: 'Leaderboard'), // New Leaderboard tab
             ],
           ),
         ),
@@ -108,6 +138,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
               padding: const EdgeInsets.all(16.0),
               child: Column(
                 children: [
+                  _buildDashboardInfo(),
+
+
+                  SizedBox(height: 16),
                   SpendingWidget(
                     title: "Category 1",
                     totalSpending: totalSpending1,
@@ -135,17 +169,80 @@ class _DashboardScreenState extends State<DashboardScreen> {
               padding: const EdgeInsets.all(16.0),
               child: PieChartWidget(categoryData: categoryData),
             ),
+            // Leaderboard Tab
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: LeaderboardWidget(leaderboardData: extractLeaderboardData()),
+            ),
           ],
         ),
       ),
     );
   }
 }
+Widget _buildDashboardInfo() {
+  String username = "John Doe";
+  String points = "1200";
+  String individualRank = "2";
+  String bestMonth = "August 2024";
+    return Card(
+      elevation: 3,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              "Dashboard Info",
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 8),
+            Row(
+              children: [
+                Text(
+                  "Username: ",
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                Text(username),
+              ],
+            ),
+            Row(
+              children: [
+                Text(
+                  "Points: ",
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                Text(points),
+              ],
+            ),
+            Row(
+              children: [
+                Text(
+                  "Individual Rank: ",
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                Text(individualRank),
+              ],
+            ),
+            Row(
+              children: [
+                Text(
+                  "Best Month: ",
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                Text(bestMonth),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+}
 
 class SpendingWidget extends StatefulWidget {
   final String title;
   final double totalSpending;
-  final double progress;
   final double monthlyLimit;
   final String currentStatus;
   final double predictedAmount;
@@ -155,19 +252,17 @@ class SpendingWidget extends StatefulWidget {
     super.key,
     required this.title,
     required this.totalSpending,
-    required this.progress,
     required this.monthlyLimit,
     required this.currentStatus,
     required this.predictedAmount,
-    required this.rewardPoints,
+    required this.rewardPoints, required double progress,
   });
 
   @override
   _SpendingWidgetState createState() => _SpendingWidgetState();
 }
 
-class _SpendingWidgetState extends State<SpendingWidget>
-    with SingleTickerProviderStateMixin {
+class _SpendingWidgetState extends State<SpendingWidget> {
   bool isExpanded = false;
 
   @override
@@ -176,78 +271,62 @@ class _SpendingWidgetState extends State<SpendingWidget>
       duration: Duration(milliseconds: 300),
       curve: Curves.easeInOut,
       child: GestureDetector(
-        onTap: () {
-          setState(() {
-            isExpanded = !isExpanded;
-          });
-        },
+        onTap: () => setState(() => isExpanded = !isExpanded),
         child: Card(
           elevation: 3,
-          clipBehavior: Clip.antiAlias,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
           child: Padding(
             padding: const EdgeInsets.all(16.0),
-            child: isExpanded ? buildExpandedContent() : buildCollapsedContent(),
+            child: isExpanded ? _buildExpandedContent() : _buildCollapsedContent(),
           ),
         ),
       ),
     );
   }
 
-  Widget buildCollapsedContent() {
+  Widget _buildCollapsedContent() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(
-          widget.title,
-          style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
-        ),
+        Text(widget.title, style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600)),
         Icon(Icons.expand_more),
       ],
     );
   }
 
-  Widget buildExpandedContent() {
+  Widget _buildExpandedContent() {
+    final spendingDetails = [
+      {"label": "Total Spending", "value": "₹${widget.totalSpending.toStringAsFixed(2)}"},
+      {"label": "Current Status", "value": widget.currentStatus},
+      {"label": "Predicted Amount", "value": "₹${widget.predictedAmount.toStringAsFixed(2)}"},
+      {"label": "Reward", "value": "${widget.rewardPoints} pts"},
+    ];
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              widget.title,
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
-            ),
+            Text(widget.title, style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600)),
             Icon(Icons.expand_less),
           ],
         ),
         SizedBox(height: 8),
-        Text(
-          "Total Spending: ₹${widget.totalSpending.toStringAsFixed(2)}",
+        ...spendingDetails.map((detail) => Text(
+          "${detail['label']}: ${detail['value']}",
           style: TextStyle(fontSize: 14),
-        ),
+        )).toList(),
         LinearPercentIndicator(
           lineHeight: 12,
-          percent: widget.progress.clamp(0.0, 1.0),
+          percent: (widget.totalSpending / widget.monthlyLimit).clamp(0.0, 1.0),
           center: Text(
-            "${(widget.progress * 100).clamp(0, 100).toStringAsFixed(1)}%",
+            "${((widget.totalSpending / widget.monthlyLimit) * 100).clamp(0, 100).toStringAsFixed(1)}%",
             style: TextStyle(fontSize: 10, color: Colors.white),
           ),
           progressColor: Colors.green,
           backgroundColor: Colors.grey[300],
           barRadius: Radius.circular(8),
-        ),
-        Text(
-          "Current Status: ${widget.currentStatus}",
-          style: TextStyle(fontSize: 14),
-        ),
-        Text(
-          "Predicted Amount: ₹${widget.predictedAmount.toStringAsFixed(2)}",
-          style: TextStyle(fontSize: 14),
-        ),
-        Text(
-          "Reward: ${widget.rewardPoints} pts",
-          style: TextStyle(fontSize: 14, color: Colors.blue),
         ),
       ],
     );
@@ -261,36 +340,48 @@ class PieChartWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return ListView(
       children: [
-        Expanded(
-          flex: 4,
-          child: Container(
-            width: MediaQuery.of(context).size.width * 0.8,
-            child: PieChart(
-              PieChartData(
-                sectionsSpace: 4,
-                centerSpaceRadius: 60,
-                sections: _getPieSections(),
-                borderData: FlBorderData(show: false),
-              ),
-            ),
-          ),
-        ),
-        Expanded(
-          flex: 1,
-          child: _buildLegend(),
-        ),
+        _buildPieChartSection(),
+        ...categoryData.map((category) => CategoryLineGraphWidget(
+          title: category['title'], 
+          monthlyData: category['monthlyData'] ?? [],
+          totalSpent: category['spent']
+        )).toList(),
       ],
     );
   }
 
+  Widget _buildPieChartSection() {
+    return Container(
+      height: 300,
+      child: Column(
+        children: [
+          Expanded(
+            flex: 4,
+            child: PieChart(PieChartData(
+              sectionsSpace: 4,
+              centerSpaceRadius: 60,
+              sections: _getPieSections(),
+              borderData: FlBorderData(show: false),
+            )),
+          ),
+          Expanded(
+            flex: 1,
+            child: _buildLegend(),
+          ),
+        ],
+      ),
+    );
+  }
+
   List<PieChartSectionData> _getPieSections() {
+    final colors = [Colors.red, Colors.blue, Colors.green, Colors.orange];
     return categoryData.asMap().entries.map((entry) {
       int index = entry.key;
       Map<String, dynamic> data = entry.value;
       return PieChartSectionData(
-        color: _getCategoryColor(index),
+        color: colors[index % colors.length],
         value: data['spent'].toDouble(),
         title: "",
         radius: 80,
@@ -309,9 +400,8 @@ class PieChartWidget extends StatelessWidget {
           child: Row(
             children: [
               Container(
-                width: 16,
-                height: 16,
-                color: _getCategoryColor(index),
+                width: 16, height: 16,
+                color: _getPieSections()[index].color,
               ),
               SizedBox(width: 8),
               Text(
@@ -324,14 +414,152 @@ class PieChartWidget extends StatelessWidget {
       }).toList(),
     );
   }
+}
 
-  Color _getCategoryColor(int index) {
-    const List<Color> colors = [
-      Colors.red,
-      Colors.blue,
-      Colors.green,
-      Colors.orange,
-    ];
-    return colors[index % colors.length];
+class CategoryLineGraphWidget extends StatelessWidget {
+  final String title;
+  final List<double> monthlyData;
+  final double totalSpent;
+  static const  List<String> _months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'];
+
+  const CategoryLineGraphWidget({
+    super.key, 
+    required this.title, 
+    required this.monthlyData,
+    required this.totalSpent
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      margin: EdgeInsets.all(16),
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            _buildHeader(),
+            SizedBox(height: 16),
+            _buildLineChart(),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildHeader() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          title, 
+          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)
+        ),
+        Text(
+          'Total Spent: ₹${totalSpent.toStringAsFixed(2)}', 
+          style: TextStyle(fontSize: 14, color: Colors.grey[700])
+        ),
+      ],
+    );
+  }
+
+  Widget _buildLineChart() {
+    return Container(
+      height: 200,
+      child: LineChart(
+        LineChartData(
+          gridData: FlGridData(show: true),
+          titlesData: FlTitlesData(
+            bottomTitles: AxisTitles(
+              sideTitles: SideTitles(
+                showTitles: true,
+                reservedSize: 30,
+                getTitlesWidget: (value, meta) => Text(
+                  _months[value.toInt() % _months.length],
+                  style: TextStyle(fontSize: 10),
+                ),
+              ),
+            ),
+            leftTitles: AxisTitles(
+              sideTitles: SideTitles(
+                showTitles: true,
+                reservedSize: 40,
+                getTitlesWidget: (value, meta) => Text(
+                  value.toStringAsFixed(0),
+                  style: TextStyle(fontSize: 10),
+                ),
+              ),
+            ),
+            topTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
+            rightTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
+          ),
+          lineBarsData: [
+            LineChartBarData(
+              spots: monthlyData.asMap().entries.map((entry) => 
+                FlSpot(entry.key.toDouble(), entry.value)
+              ).toList(),
+              isCurved: true,
+              color: Colors.blue,
+              dotData: FlDotData(show: true),
+              belowBarData: BarAreaData(
+                show: true,
+                color: Colors.blue.withOpacity(0.3),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+class LeaderboardWidget extends StatelessWidget {
+  final List<Map<String, String>> leaderboardData;
+  
+  const LeaderboardWidget({super.key, required this.leaderboardData});
+  
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      child: Card(
+        elevation: 4,
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Leaderboard',
+                style: TextStyle(
+                  fontSize: 20, 
+                  fontWeight: FontWeight.bold
+                ),
+              ),
+              SizedBox(height: 16),
+              DataTable(
+                columnSpacing: 20,
+                columns: const [
+                  DataColumn(label: Text('Rank', style: TextStyle(fontWeight: FontWeight.bold))),
+                  DataColumn(label: Text('Name', style: TextStyle(fontWeight: FontWeight.bold))),
+                  DataColumn(label: Text('Points', style: TextStyle(fontWeight: FontWeight.bold))),
+                ],
+                rows: leaderboardData.map((entry) => DataRow(
+                  cells: [
+                    DataCell(Text(entry['Rank'] ?? '', style: TextStyle(fontWeight: FontWeight.w500))),
+                    DataCell(Text(entry['Name'] ?? '', style: TextStyle(fontWeight: FontWeight.w500))),
+                    DataCell(Text(
+                      entry['Points'] ?? '', 
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500, 
+                        color: Colors.blue
+                      ),
+                    )),
+                  ]
+                )).toList(),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }

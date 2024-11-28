@@ -34,6 +34,7 @@ dependencies:
   fl_chart: ^0.69.2
   excel: ^4.0.6
   file_picker: ^8.1.4
+  csv: ^5.0.0 # Add the csv package
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -59,6 +60,8 @@ dev_dependencies:
 flutter:
   assets:
     - assets/Book1.xlsx
+    - assets/grouped.csv
+    - assets/linegraph.json
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.

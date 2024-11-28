@@ -1,0 +1,366 @@
+Date,Category,Amount,Description
+2023-01-01,Education,67.76,Course fee
+2023-01-02,Transportation,261.34,Parking fee
+2023-01-03,Shopping,209.04,Clothing
+2023-01-04,Entertainment,247.53,Games
+2023-01-05,Education,387.47,Online subscription
+2023-01-06,Education,120.99,Online subscription
+2023-01-07,Food,485.14,Fast food
+2023-01-08,Food,291.99,Restaurant
+2023-01-09,Entertainment,278.52,Games
+2023-01-10,Food,486.76,Coffee shop
+2023-01-11,Entertainment,493.39,Games
+2023-01-12,Food,429.86,Coffee shop
+2023-01-13,Miscellaneous,478.76,Pet care
+2023-01-14,Food,313.89,Groceries
+2023-01-15,Utilities,479.54,Water bill
+2023-01-16,Education,221.82,Online subscription
+2023-01-17,Health,135.33,Yoga class
+2023-01-18,Entertainment,28.98,Concert
+2023-01-19,Shopping,443.66,Books
+2023-01-20,Transportation,102.57,Taxi ride
+2023-01-21,Entertainment,497.89,Games
+2023-01-22,Education,45.82,Online subscription
+2023-01-23,Education,429.82,Online subscription
+2023-01-24,Food,342.49,Fast food
+2023-01-25,Miscellaneous,22.39,Pet care
+2023-01-26,Shopping,238.61,Clothing
+2023-01-27,Health,125.98,Yoga class
+2023-01-28,Food,353.46,Coffee shop
+2023-01-29,Miscellaneous,70.02,Others
+2023-01-30,Food,126.98,Groceries
+2023-01-31,Shopping,240.06,Books
+2023-02-01,Miscellaneous,23.72,Charity
+2023-02-02,Shopping,205.74,Electronics
+2023-02-03,Entertainment,177.85,Games
+2023-02-04,Health,193.37,Gym membership
+2023-02-05,Shopping,97.73,Home supplies
+2023-02-06,Health,135.55,Yoga class
+2023-02-07,Transportation,383.51,Bus fare
+2023-02-08,Miscellaneous,250.34,Charity
+2023-02-09,Miscellaneous,36.01,Others
+2023-02-10,Transportation,270.13,Parking fee
+2023-02-11,Education,77.64,Books
+2023-02-12,Entertainment,186.36,Movie
+2023-02-13,Health,62.11,Gym membership
+2023-02-14,Shopping,185.73,Electronics
+2023-02-15,Miscellaneous,228.4,Gifts
+2023-02-16,Shopping,323.27,Clothing
+2023-02-17,Health,168.33,Gym membership
+2023-02-18,Transportation,192.29,Bus fare
+2023-02-19,Food,300.26,Restaurant
+2023-02-20,Utilities,208.94,Gas bill
+2023-02-21,Food,202.11,Restaurant
+2023-02-22,Transportation,324.27,Parking fee
+2023-02-23,Miscellaneous,395.75,Others
+2023-02-24,Entertainment,165.29,Streaming subscription
+2023-02-25,Health,485.01,Doctor visit
+2023-02-26,Education,292.04,Stationery
+2023-02-27,Food,387.2,Coffee shop
+2023-02-28,Utilities,440.08,Gas bill
+2023-03-01,Transportation,374.12,Fuel
+2023-03-02,Utilities,151.93,Internet bill
+2023-03-03,Food,366.99,Groceries
+2023-03-04,Utilities,50.95,Gas bill
+2023-03-05,Education,457.3,Stationery
+2023-03-06,Shopping,177.7,Clothing
+2023-03-07,Education,275.27,Course fee
+2023-03-08,Utilities,207.95,Electricity bill
+2023-03-09,Miscellaneous,196.02,Others
+2023-03-10,Health,45.4,Pharmacy
+2023-03-11,Shopping,406.51,Electronics
+2023-03-12,Transportation,223.71,Bus fare
+2023-03-13,Miscellaneous,343.72,Charity
+2023-03-14,Health,426.43,Doctor visit
+2023-03-15,Transportation,235.27,Parking fee
+2023-03-16,Health,240.66,Doctor visit
+2023-03-17,Transportation,468.93,Taxi ride
+2023-03-18,Education,322.69,Stationery
+2023-03-19,Entertainment,358.01,Concert
+2023-03-20,Utilities,428.99,Internet bill
+2023-03-21,Shopping,412.89,Home supplies
+2023-03-22,Utilities,189.14,Internet bill
+2023-03-23,Utilities,179.83,Internet bill
+2023-03-24,Miscellaneous,137.9,Gifts
+2023-03-25,Health,396.08,Pharmacy
+2023-03-26,Health,374.91,Yoga class
+2023-03-27,Miscellaneous,470.17,Charity
+2023-03-28,Miscellaneous,344.58,Pet care
+2023-03-29,Transportation,405.15,Taxi ride
+2023-03-30,Miscellaneous,467.05,Gifts
+2023-03-31,Transportation,227.96,Parking fee
+2023-04-01,Health,57.46,Gym membership
+2023-04-02,Education,148.27,Books
+2023-04-03,Shopping,425.91,Clothing
+2023-04-04,Food,51.45,Coffee shop
+2023-04-05,Education,10.93,Online subscription
+2023-04-06,Health,403.4,Gym membership
+2023-04-07,Education,60.52,Stationery
+2023-04-08,Utilities,271.11,Internet bill
+2023-04-09,Miscellaneous,337.52,Gifts
+2023-04-10,Miscellaneous,377.38,Charity
+2023-04-11,Utilities,385.31,Water bill
+2023-04-12,Entertainment,122.6,Streaming subscription
+2023-04-13,Utilities,271.92,Water bill
+2023-04-14,Entertainment,117.05,Concert
+2023-04-15,Shopping,230.12,Home supplies
+2023-04-16,Health,111.17,Pharmacy
+2023-04-17,Shopping,130.85,Clothing
+2023-04-18,Education,98.16,Online subscription
+2023-04-19,Miscellaneous,24.59,Pet care
+2023-04-20,Transportation,315.88,Taxi ride
+2023-04-21,Health,468.2,Doctor visit
+2023-04-22,Entertainment,386.18,Concert
+2023-04-23,Entertainment,338.93,Streaming subscription
+2023-04-24,Health,175.08,Yoga class
+2023-04-25,Transportation,75.65,Bus fare
+2023-04-26,Transportation,306.0,Fuel
+2023-04-27,Health,137.18,Pharmacy
+2023-04-28,Education,239.64,Books
+2023-04-29,Transportation,169.92,Parking fee
+2023-04-30,Shopping,45.14,Books
+2023-05-01,Food,266.37,Groceries
+2023-05-02,Shopping,253.64,Clothing
+2023-05-03,Utilities,473.85,Internet bill
+2023-05-04,Transportation,63.66,Fuel
+2023-05-05,Food,155.21,Coffee shop
+2023-05-06,Shopping,221.71,Clothing
+2023-05-07,Education,333.98,Course fee
+2023-05-08,Education,95.63,Books
+2023-05-09,Miscellaneous,159.67,Gifts
+2023-05-10,Entertainment,136.91,Games
+2023-05-11,Utilities,300.75,Gas bill
+2023-05-12,Shopping,465.82,Electronics
+2023-05-13,Shopping,83.49,Home supplies
+2023-05-14,Health,315.65,Gym membership
+2023-05-15,Transportation,121.2,Parking fee
+2023-05-16,Utilities,217.13,Gas bill
+2023-05-17,Miscellaneous,185.34,Gifts
+2023-05-18,Health,357.58,Pharmacy
+2023-05-19,Utilities,163.4,Electricity bill
+2023-05-20,Education,327.08,Online subscription
+2023-05-21,Entertainment,198.4,Games
+2023-05-22,Miscellaneous,217.41,Charity
+2023-05-23,Utilities,188.65,Gas bill
+2023-05-24,Miscellaneous,345.44,Pet care
+2023-05-25,Utilities,463.0,Electricity bill
+2023-05-26,Miscellaneous,184.86,Charity
+2023-05-27,Health,110.58,Gym membership
+2023-05-28,Miscellaneous,71.33,Others
+2023-05-29,Health,126.82,Yoga class
+2023-05-30,Health,12.33,Pharmacy
+2023-05-31,Miscellaneous,243.82,Pet care
+2023-06-01,Food,52.52,Fast food
+2023-06-02,Health,161.62,Pharmacy
+2023-06-03,Food,331.24,Fast food
+2023-06-04,Food,33.61,Fast food
+2023-06-05,Miscellaneous,118.43,Others
+2023-06-06,Education,395.07,Stationery
+2023-06-07,Utilities,256.15,Gas bill
+2023-06-08,Health,71.89,Gym membership
+2023-06-09,Education,146.71,Course fee
+2023-06-10,Miscellaneous,43.49,Pet care
+2023-06-11,Entertainment,21.72,Movie
+2023-06-12,Transportation,371.82,Taxi ride
+2023-06-13,Transportation,73.85,Bus fare
+2023-06-14,Entertainment,344.15,Streaming subscription
+2023-06-15,Entertainment,152.35,Streaming subscription
+2023-06-16,Utilities,444.44,Water bill
+2023-06-17,Utilities,371.72,Water bill
+2023-06-18,Food,344.09,Restaurant
+2023-06-19,Education,248.36,Course fee
+2023-06-20,Health,15.92,Yoga class
+2023-06-21,Transportation,217.46,Fuel
+2023-06-22,Health,327.31,Pharmacy
+2023-06-23,Entertainment,132.86,Streaming subscription
+2023-06-24,Transportation,425.62,Bus fare
+2023-06-25,Utilities,204.94,Electricity bill
+2023-06-26,Transportation,167.49,Taxi ride
+2023-06-27,Utilities,357.31,Water bill
+2023-06-28,Utilities,170.75,Internet bill
+2023-06-29,Education,349.88,Online subscription
+2023-06-30,Utilities,271.54,Internet bill
+2023-07-01,Shopping,73.6,Electronics
+2023-07-02,Shopping,94.41,Electronics
+2023-07-03,Food,142.81,Coffee shop
+2023-07-04,Miscellaneous,466.34,Others
+2023-07-05,Entertainment,409.03,Movie
+2023-07-06,Shopping,312.35,Books
+2023-07-07,Education,124.79,Stationery
+2023-07-08,Miscellaneous,67.41,Others
+2023-07-09,Health,131.84,Pharmacy
+2023-07-10,Miscellaneous,396.34,Gifts
+2023-07-11,Utilities,460.98,Electricity bill
+2023-07-12,Shopping,47.96,Clothing
+2023-07-13,Miscellaneous,44.38,Gifts
+2023-07-14,Shopping,67.94,Electronics
+2023-07-15,Utilities,35.02,Water bill
+2023-07-16,Entertainment,86.12,Streaming subscription
+2023-07-17,Entertainment,395.97,Games
+2023-07-18,Education,183.78,Course fee
+2023-07-19,Entertainment,374.73,Games
+2023-07-20,Shopping,59.87,Electronics
+2023-07-21,Entertainment,23.92,Movie
+2023-07-22,Utilities,208.59,Water bill
+2023-07-23,Transportation,219.49,Bus fare
+2023-07-24,Education,168.98,Online subscription
+2023-07-25,Shopping,145.12,Electronics
+2023-07-26,Entertainment,84.85,Games
+2023-07-27,Transportation,453.88,Bus fare
+2023-07-28,Food,232.81,Fast food
+2023-07-29,Miscellaneous,428.88,Charity
+2023-07-30,Education,266.87,Online subscription
+2023-07-31,Health,451.86,Pharmacy
+2023-08-01,Entertainment,130.37,Games
+2023-08-02,Entertainment,281.32,Games
+2023-08-03,Shopping,473.8,Home supplies
+2023-08-04,Education,294.18,Stationery
+2023-08-05,Miscellaneous,96.33,Others
+2023-08-06,Transportation,135.49,Fuel
+2023-08-07,Education,256.47,Stationery
+2023-08-08,Shopping,291.49,Electronics
+2023-08-09,Miscellaneous,230.38,Others
+2023-08-10,Shopping,350.6,Home supplies
+2023-08-11,Health,468.32,Yoga class
+2023-08-12,Education,203.57,Books
+2023-08-13,Education,341.52,Books
+2023-08-14,Education,44.54,Online subscription
+2023-08-15,Utilities,258.1,Gas bill
+2023-08-16,Miscellaneous,434.78,Pet care
+2023-08-17,Food,300.95,Groceries
+2023-08-18,Entertainment,329.08,Movie
+2023-08-19,Food,367.66,Coffee shop
+2023-08-20,Transportation,195.58,Taxi ride
+2023-08-21,Entertainment,52.26,Streaming subscription
+2023-08-22,Shopping,46.28,Clothing
+2023-08-23,Transportation,281.94,Taxi ride
+2023-08-24,Entertainment,324.11,Streaming subscription
+2023-08-25,Transportation,269.84,Taxi ride
+2023-08-26,Transportation,404.93,Parking fee
+2023-08-27,Health,197.86,Pharmacy
+2023-08-28,Entertainment,441.91,Games
+2023-08-29,Food,359.01,Coffee shop
+2023-08-30,Transportation,438.33,Parking fee
+2023-08-31,Transportation,365.2,Taxi ride
+2023-09-01,Shopping,398.24,Books
+2023-09-02,Shopping,476.89,Clothing
+2023-09-03,Shopping,181.49,Electronics
+2023-09-04,Food,460.75,Coffee shop
+2023-09-05,Transportation,54.62,Bus fare
+2023-09-06,Utilities,161.11,Gas bill
+2023-09-07,Miscellaneous,304.62,Charity
+2023-09-08,Entertainment,431.32,Movie
+2023-09-09,Food,345.37,Groceries
+2023-09-10,Shopping,457.7,Home supplies
+2023-09-11,Utilities,315.37,Electricity bill
+2023-09-12,Entertainment,192.52,Concert
+2023-09-13,Utilities,76.6,Internet bill
+2023-09-14,Utilities,265.77,Electricity bill
+2023-09-15,Shopping,259.9,Home supplies
+2023-09-16,Transportation,86.79,Fuel
+2023-09-17,Entertainment,445.75,Movie
+2023-09-18,Health,381.18,Pharmacy
+2023-09-19,Food,175.0,Restaurant
+2023-09-20,Entertainment,76.99,Concert
+2023-09-21,Entertainment,40.3,Games
+2023-09-22,Utilities,55.4,Gas bill
+2023-09-23,Shopping,296.04,Clothing
+2023-09-24,Food,163.46,Fast food
+2023-09-25,Utilities,440.76,Electricity bill
+2023-09-26,Utilities,134.49,Water bill
+2023-09-27,Food,391.95,Coffee shop
+2023-09-28,Education,345.23,Online subscription
+2023-09-29,Education,258.18,Books
+2023-09-30,Miscellaneous,464.97,Others
+2023-10-01,Utilities,240.36,Gas bill
+2023-10-02,Shopping,429.26,Clothing
+2023-10-03,Transportation,188.62,Parking fee
+2023-10-04,Utilities,331.94,Electricity bill
+2023-10-05,Health,187.33,Yoga class
+2023-10-06,Utilities,28.14,Electricity bill
+2023-10-07,Utilities,276.08,Electricity bill
+2023-10-08,Transportation,236.5,Bus fare
+2023-10-09,Transportation,141.76,Parking fee
+2023-10-10,Entertainment,341.14,Streaming subscription
+2023-10-11,Transportation,155.79,Taxi ride
+2023-10-12,Food,91.42,Fast food
+2023-10-13,Shopping,463.09,Electronics
+2023-10-14,Miscellaneous,257.68,Others
+2023-10-15,Miscellaneous,311.44,Charity
+2023-10-16,Education,71.23,Books
+2023-10-17,Education,474.84,Books
+2023-10-18,Utilities,112.52,Electricity bill
+2023-10-19,Utilities,76.19,Internet bill
+2023-10-20,Education,166.4,Course fee
+2023-10-21,Education,210.76,Course fee
+2023-10-22,Entertainment,218.96,Games
+2023-10-23,Education,158.08,Stationery
+2023-10-24,Entertainment,397.04,Streaming subscription
+2023-10-25,Shopping,494.62,Books
+2023-10-26,Miscellaneous,456.24,Pet care
+2023-10-27,Shopping,473.28,Electronics
+2023-10-28,Entertainment,236.86,Games
+2023-10-29,Transportation,88.22,Fuel
+2023-10-30,Utilities,483.89,Internet bill
+2023-10-31,Shopping,311.66,Clothing
+2023-11-01,Utilities,448.53,Electricity bill
+2023-11-02,Entertainment,18.86,Games
+2023-11-03,Education,49.96,Stationery
+2023-11-04,Entertainment,415.2,Concert
+2023-11-05,Entertainment,162.04,Games
+2023-11-06,Education,446.69,Stationery
+2023-11-07,Miscellaneous,409.36,Others
+2023-11-08,Entertainment,248.07,Streaming subscription
+2023-11-09,Education,25.41,Course fee
+2023-11-10,Entertainment,208.92,Movie
+2023-11-11,Shopping,190.78,Electronics
+2023-11-12,Transportation,205.25,Fuel
+2023-11-13,Entertainment,185.77,Games
+2023-11-14,Food,344.7,Restaurant
+2023-11-15,Transportation,292.96,Taxi ride
+2023-11-16,Miscellaneous,125.98,Charity
+2023-11-17,Transportation,232.8,Fuel
+2023-11-18,Entertainment,227.88,Streaming subscription
+2023-11-19,Utilities,273.13,Electricity bill
+2023-11-20,Food,328.75,Coffee shop
+2023-11-21,Education,38.93,Books
+2023-11-22,Food,450.91,Restaurant
+2023-11-23,Health,359.77,Yoga class
+2023-11-24,Shopping,27.89,Clothing
+2023-11-25,Health,410.63,Yoga class
+2023-11-26,Transportation,114.94,Bus fare
+2023-11-27,Health,90.74,Gym membership
+2023-11-28,Utilities,411.79,Water bill
+2023-11-29,Food,51.03,Coffee shop
+2023-11-30,Education,335.68,Books
+2023-12-01,Utilities,492.05,Water bill
+2023-12-02,Education,263.31,Online subscription
+2023-12-03,Health,438.66,Doctor visit
+2023-12-04,Education,404.77,Online subscription
+2023-12-05,Health,48.42,Doctor visit
+2023-12-06,Education,289.85,Course fee
+2023-12-07,Shopping,11.92,Books
+2023-12-08,Transportation,274.09,Parking fee
+2023-12-09,Miscellaneous,269.29,Charity
+2023-12-10,Utilities,186.65,Electricity bill
+2023-12-11,Shopping,91.88,Clothing
+2023-12-12,Utilities,496.56,Internet bill
+2023-12-13,Shopping,75.16,Home supplies
+2023-12-14,Utilities,84.52,Gas bill
+2023-12-15,Food,37.66,Groceries
+2023-12-16,Shopping,461.56,Clothing
+2023-12-17,Education,246.04,Stationery
+2023-12-18,Education,58.82,Stationery
+2023-12-19,Health,461.24,Yoga class
+2023-12-20,Utilities,472.97,Electricity bill
+2023-12-21,Miscellaneous,282.21,Charity
+2023-12-22,Utilities,443.03,Internet bill
+2023-12-23,Shopping,260.72,Electronics
+2023-12-24,Food,362.25,Restaurant
+2023-12-25,Health,364.08,Pharmacy
+2023-12-26,Education,327.18,Books
+2023-12-27,Health,54.41,Pharmacy
+2023-12-28,Transportation,111.31,Fuel
+2023-12-29,Health,127.09,Gym membership
+2023-12-30,Shopping,26.31,Home supplies
+2023-12-31,Miscellaneous,287.21,Others
